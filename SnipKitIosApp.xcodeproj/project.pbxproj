@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3EB5EF12FE184378335527A9 /* Pods_SnipKitIosApp_SnipKitIosAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D68EF1EAB005D296E2A3EB /* Pods_SnipKitIosApp_SnipKitIosAppUITests.framework */; };
 		4AF1ECF264E5C9A88F930054 /* Pods_SnipKitIosAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89C96F0F9686246425B3110C /* Pods_SnipKitIosAppTests.framework */; };
+		C3042C1B28E978220096772E /* CFTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3042C1A28E978220096772E /* CFTool.swift */; };
 		C32657FF28E1CC2400FA2960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32657FE28E1CC2400FA2960 /* AppDelegate.swift */; };
 		C326580328E1CC2400FA2960 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326580228E1CC2400FA2960 /* ViewController.swift */; };
 		C326580828E1CC2400FA2960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C326580728E1CC2400FA2960 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		5FD2A9B0E400C2149A386F06 /* Pods-SnipKitIosApp-SnipKitIosAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnipKitIosApp-SnipKitIosAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-SnipKitIosApp-SnipKitIosAppUITests/Pods-SnipKitIosApp-SnipKitIosAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		67D68EF1EAB005D296E2A3EB /* Pods_SnipKitIosApp_SnipKitIosAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnipKitIosApp_SnipKitIosAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C96F0F9686246425B3110C /* Pods_SnipKitIosAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnipKitIosAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3042C1A28E978220096772E /* CFTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFTool.swift; sourceTree = "<group>"; };
 		C32657FB28E1CC2400FA2960 /* SnipKitIosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnipKitIosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32657FE28E1CC2400FA2960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C326580228E1CC2400FA2960 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		C32657FD28E1CC2400FA2960 /* SnipKitIosApp */ = {
 			isa = PBXGroup;
 			children = (
+				C3042C1A28E978220096772E /* CFTool.swift */,
 				C32657FE28E1CC2400FA2960 /* AppDelegate.swift */,
 				C326580228E1CC2400FA2960 /* ViewController.swift */,
 				C326580728E1CC2400FA2960 /* Assets.xcassets */,
@@ -401,6 +404,7 @@
 			files = (
 				C326580328E1CC2400FA2960 /* ViewController.swift in Sources */,
 				C32657FF28E1CC2400FA2960 /* AppDelegate.swift in Sources */,
+				C3042C1B28E978220096772E /* CFTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
