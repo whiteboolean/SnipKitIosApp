@@ -34,13 +34,26 @@ class ViewController: UIViewController {
         rootLayout.tg_insetsPaddingFromSafeArea = .all
         self.view = rootLayout
          
-        let vertTitleLabel = self.createTitleLabel("你好世界")
+        let vertTitleLabel = self.createTitleLabel("垂直布局")
         
         vertTitleLabel.tg_top.equal(self.topLayoutGuide, offset:10)  //顶部距离前面的视图10
 //        vertTitleLabel.tg_top.equal(10)  //您可以注释上面，解开这句看看运行效果
         vertTitleLabel.tg_leading.equal(10)
         rootLayout.addSubview(vertTitleLabel)
         
+        let vertLinearLayout = self.createVerticalLinearLayout()
+        vertLinearLayout.tg_size(width: .fill, height: .wrap)
+        rootLayout.addSubview(vertLinearLayout)
+        
+        
+        let horizontalLabel = self.createTitleLabel("水平布局")
+        horizontalLabel.tg_top.equal(20)
+        horizontalLabel.tg_leading.equal(10)
+        rootLayout.addSubview(horizontalLabel)
+        
+        let horizontalLinearLayout = self.createHorizontalLinearLayout()
+        horizontalLinearLayout.tg_size(width: .fill, height: .fill)
+        rootLayout.addSubview(horizontalLinearLayout)
         
         
         
@@ -65,6 +78,32 @@ class ViewController: UIViewController {
 
 extension ViewController {
     
+    
+    func createHorizontalLinearLayout() ->TGLinearLayout {
+        let horiLinearLayout = TGLinearLayout(.horz)
+        horiLinearLayout.backgroundColor = CFTool.color(0)
+        let topMarginLabel = self.createContainerLabel("topMargin", backgroundColor: .cyan)
+        topMarginLabel.tg_origin(x: 10, y: 10)
+        topMarginLabel.tg_size(width: 100, height: .wrap)
+        horiLinearLayout.addSubview(topMarginLabel)
+        
+        let secondLabel = self.createContainerLabel("secondLabel", backgroundColor: .yellow)
+        secondLabel.tg_centerY.equal(0)
+        horiLinearLayout.addSubview(secondLabel)
+        
+        let thirdBottomLabel = self.createContainerLabel("thirdBottomLabel", backgroundColor: .orange)
+        thirdBottomLabel.tg_bottom.equal(10)
+        horiLinearLayout.addSubview(thirdBottomLabel)
+        
+        let forthFullLabel = self.createContainerLabel("fourthFullLabel", backgroundColor: .green)
+        forthFullLabel.tg_vertMargin(10)
+        forthFullLabel.tg_trailing.equal(10)
+        horiLinearLayout.addSubview(forthFullLabel)
+    
+    
+        return horiLinearLayout
+    }
+    
     func createTitleLabel(_ title :String) ->UILabel{
         let label = UILabel()
         label.text = title
@@ -76,20 +115,51 @@ extension ViewController {
     
     func createContainerLabel(_ title:String, backgroundColor:UIColor) ->UILabel{
         let label = UILabel()
-        label.text = title
+        label.text = title;
+        label.font = CFTool.font(15)
+        label.tg_size(width: .wrap, height: .wrap)
+        label.numberOfLines = 0
         label.textAlignment = .center
-        label.textColor = backgroundColor
-        label.font  = CFTool.font(15)
         label.adjustsFontSizeToFitWidth = true
+        label.backgroundColor =  backgroundColor
+        label.layer.shadowOffset = CGSize(width:3, height:3)
         label.layer.shadowColor = CFTool.color(4).cgColor
         label.layer.shadowRadius = 2
         label.layer.shadowOpacity = 0.3
         return label
     }
     
-    func createVerticalLinearLayout(){
+    func createVerticalLinearLayout() -> TGLinearLayout{
+        let vertLinearLayout = TGLinearLayout(.vert)
+        vertLinearLayout.backgroundColor = CFTool.color(0)
+        
+        let leftLabel = self.createContainerLabel("leftLabel", backgroundColor: .red)
+        leftLabel.tg_origin(x: 10, y: 10)
+        leftLabel.tg_size(width: 200, height: 35)   //设置视图的宽度和高度
+        vertLinearLayout.addSubview(leftLabel)
         
         
+        let centerLabel = self.createContainerLabel("centerLabel", backgroundColor: .orange)
+        centerLabel.tg_top.equal(10)
+        centerLabel.tg_centerX .equal(0)
+        centerLabel.tg_size(width: 200, height: 35)
+        vertLinearLayout.addSubview(centerLabel)
+        
+        
+        let rightLabel = self.createContainerLabel("rightLabel", backgroundColor: UIColor.systemBlue)
+        rightLabel.tg_top.equal(10)
+        rightLabel.tg_size(width: 200, height: 35)
+        rightLabel.tg_right.equal(10)
+        vertLinearLayout.addSubview(rightLabel)
+        
+        let bottomLabel = self.createContainerLabel("bottomLabel", backgroundColor: UIColor.cyan)
+        bottomLabel.tg_height.equal(35)
+        bottomLabel.tg_horzMargin(10)
+        bottomLabel.tg_top.equal(10)
+        bottomLabel.tg_bottom.equal(10)
+        
+        vertLinearLayout.addSubview(bottomLabel)
+        return vertLinearLayout
     }
 }
 
