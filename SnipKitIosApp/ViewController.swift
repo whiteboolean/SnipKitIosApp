@@ -36,8 +36,8 @@ class ViewController: UIViewController {
          
         let vertTitleLabel = self.createTitleLabel("垂直布局")
         
-        vertTitleLabel.tg_top.equal(self.topLayoutGuide, offset:10)  //顶部距离前面的视图10
-//        vertTitleLabel.tg_top.equal(10)  //您可以注释上面，解开这句看看运行效果
+//        vertTitleLabel.tg_top.equal(self.topLayoutGuide, offset:10)  //顶部距离前面的视图10
+        vertTitleLabel.tg_top.equal(10)  //您可以注释上面，解开这句看看运行效果
         vertTitleLabel.tg_leading.equal(10)
         rootLayout.addSubview(vertTitleLabel)
         
@@ -54,14 +54,7 @@ class ViewController: UIViewController {
         let horizontalLinearLayout = self.createHorizontalLinearLayout()
         horizontalLinearLayout.tg_size(width: .fill, height: .fill)
         rootLayout.addSubview(horizontalLinearLayout)
-        
-        
-        
-        
-        
-        
-        
-         
+    
     }
     
     
